@@ -1,5 +1,11 @@
 {
   "pages": [
-    "pages/classic"
-  ]
+    "pages/classic/classic"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTitleText": "云息",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json"
 }

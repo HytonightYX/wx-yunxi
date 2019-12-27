@@ -1,4 +1,4 @@
-// pages/classic.js
+// pages/classic/classic.js
 Page({
 
   /**
