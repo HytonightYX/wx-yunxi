@@ -1,3 +1,5 @@
+import classicModel from '../../models/classic'
+
 // pages/classic/classic.js
 Page({
 
@@ -5,14 +7,19 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    test: 1
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    classicModel.getLatest((res) => {
+      console.log(res)
+      this.setData({
+        classic: res
+      })
+    })
   },
 
   /**
