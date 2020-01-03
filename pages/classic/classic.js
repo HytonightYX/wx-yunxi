@@ -16,6 +16,10 @@ Page({
     })
   },
 
+  onLike: function (event) {
+    console.log('======\n', event)
+  },
+
   onReady: function () {
 
   },
