@@ -1,0 +1,39 @@
+.container {
+  display: inline-flex;
+  height: 60rpx;
+}
+
+.index-container {
+  display: flex;
+  align-items: baseline;
+}
+
+.plain {
+  font-size: 32rpx;
+}
+
+.index {
+  font-size: 60rpx;
+  line-height: 60rpx;
+  font-weight: 800;
+}
+
+.line {
+  height: 44rpx;
+  margin: 0 14rpx;
+  border-left: 1px solid black;
+}
+
+.date-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.month {
+  font-size: 22rpx;
+  line-height: 24rpx;
+}
+
+.year {
+  font-size: 22rpx;
+}
