@@ -5,8 +5,9 @@ import likeModel from '../../models/like'
 Page({
 
   data: {
-    test: 1,
-    classic: null
+    classic: null,
+    first: false,
+    latest: true
   },
 
   onLoad: function (options) {
