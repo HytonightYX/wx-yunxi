@@ -15,6 +15,7 @@ Page({
       this.setData({
         classic: res
       })
+      classicModel.setLatestIndex(res.index)
     })
   },
 
@@ -25,37 +26,24 @@ Page({
 
   toNext: function (event) {
 
+    const index = this.data.classic.index
+    classicModel.getNext(index, res => {
+      this.setData({
+        classic: res,
+        first: classicModel.isFirst(res.index),
+        latest: classicModel.isLatest(res.index)
+      })
+    })
   },
 
   toPrev: function (event) {
-
-  },
-
-  onReady: function () {
-
-  },
-
-  onShow: function () {
-
-  },
-
-  onHide: function () {
-
-  },
-
-  onUnload: function () {
-
-  },
-
-  onPullDownRefresh: function () {
-
-  },
-
-  onReachBottom: function () {
-
-  },
-
-  onShareAppMessage: function () {
-
+    const index = this.data.classic.index
+    classicModel.getPrevious(index, res => {
+      this.setData({
+        classic: res,
+        first: classicModel.isFirst(res.index),
+        latest: classicModel.isLatest(res.index)
+      })
+    })
   }
 })

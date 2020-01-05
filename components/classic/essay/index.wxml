@@ -1,0 +1,6 @@
+<view class="container">
+  <image src="{{img}}" />
+  <image src="{{playSrc}}" />
+  <image src="images/essay@tag.png" />
+  <text>{{content}}</text>
+</view>
