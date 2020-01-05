@@ -14,6 +14,7 @@ class ClassicModel extends HTTP {
   }
 
   getNext(index, cb) {
+    const key = this._getKey(index + 1)
     this.request({
       url: `/classic/${index}/next`,
       success: (res) => {
@@ -23,12 +24,29 @@ class ClassicModel extends HTTP {
   }
 
   getPrevious(index, cb) {
+    const key = this._getKey(index - 1)
     this.request({
       url: `/classic/${index}/previous`,
       success: (res) => {
         cb(res)
       }
     })
+  }
+
+  getClassic(index, type, cb) {
+    const key = type === 'next' ? this._getKey(index + 1) : this._getKey(index - 1)
+    const classic = wx.getStorageSync(key)
+    if (!classic) {
+      this.request({
+        url: `/classic/${index}/${type}`,
+        success: (res) => {
+          wx.setStorageSync(this._getKey(res.index), res)
+          cb(res)
+        }
+      })
+    } else {
+      cb(classic)
+    }
   }
 
   isFirst(index) {
@@ -42,6 +60,11 @@ class ClassicModel extends HTTP {
   setLatestIndex(index) {
     this._latestIndex = index
   }
+
+  _getKey(index) {
+    return 'classic-' + index
+  }
+
 }
 
 export default new ClassicModel()
