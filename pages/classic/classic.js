@@ -19,8 +19,16 @@ Page({
   },
 
   onLike: function (event) {
-    let behavior = event.detail.behavior
+    const behavior = event.detail.behavior
     likeModel.like(behavior, this.data.classic.id, this.data.classic.type)
+  },
+
+  toNext: function (event) {
+
+  },
+
+  toPrev: function (event) {
+
   },
 
   onReady: function () {

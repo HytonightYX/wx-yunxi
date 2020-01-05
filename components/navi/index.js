@@ -1,17 +1,12 @@
 // components/navi/index.js
 Component({
-  /**
-   * Component properties
-   */
+
   properties: {
     title: String,
     first: Boolean,
     latest: Boolean
   },
 
-  /**
-   * Component initial data
-   */
   data: {
     left: 'images/left.png',
     leftDis: 'images/left@dis.png',
@@ -19,10 +14,12 @@ Component({
     rightDis: 'images/right@dis.png',
   },
 
-  /**
-   * Component methods
-   */
   methods: {
-
+    onLeft: function () {
+      !this.properties.latest && this.triggerEvent('left', {}, {})
+    },
+    onRight: function () {
+      !this.properties.first && this.triggerEvent('right', {}, {})
+    }
   }
 })
